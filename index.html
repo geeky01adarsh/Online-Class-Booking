@@ -1,55 +1,45 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Online Class Booking System</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <div class="header">
-      <h1>Online Class Booking System</h1>
-    </div>
 
-    <div class="search">
-      <input type="text" placeholder="Search for a class">
-      <button>Search</button>
-    </div>
+<head>
+    <title>Book Classes Online</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
 
-    <div class="classes">
-      <h2>Available Classes</h2>
-      <ul>
-        <li>
-          <h3>Class Name</h3>
-          <p>Class Description</p>
-          <button>Book Class</button>
-        </li>
-        <!-- Repeat this list item for each available class -->
-      </ul>
-    </div>
+<body>
+    <header>
+        <h1>Book Classes Online</h1>
+    </header>
+    <nav>
+        <form>
+            <label for="location">Location:</label>
+            <select id="location" onChange="showDates()">
+                <option value="">--Select Location--</option>
+            </select>
+            <label for="date">Date:</label>
+            <select id="date">
+                <option value="">--Select Date--</option>
+            </select>
+            <button type="button" onclick="searchClasses()">Search</button>
 
-    <div class="booking">
-      <h2>Class Booking</h2>
-      <form>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name"><br>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email"><br>
-
-        <label for="date">Date:</label>
-        <input type="date" id="date" name="date"><br>
-
-        <label for="time">Time:</label>
-        <select id="time" name="time">
-          <option value="8:00am">8:00am</option>
-          <option value="9:00am">9:00am</option>
-          <option value="10:00am">10:00am</option>
-          <!-- Add options for each available time slot -->
-        </select>
-
-        <button>Submit Booking</button>
-      </form>
-    </div>
-
+        </form>
+    </nav>
+    <main>
+        <table id="classTable" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Class Name</th>
+                    <th>Time</th>
+                    <th>Available</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </main>
     <script src="script.js"></script>
-  </body>
+</body>
+
 </html>
