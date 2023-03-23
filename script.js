@@ -145,6 +145,7 @@ const showDates = () => {
 
 // fill the table first
 const fillTable = (classesList) => {
+  const location = locationSelect.value;
   classesList.forEach((eachClass) => {
     const row = document.createElement("tr");
     const id = document.createElement("td");
@@ -163,7 +164,7 @@ const fillTable = (classesList) => {
       const book = document.createElement("Button");
       book.textContent = "Book Now";
       book.addEventListener('click', function () {
-        alert(`You have booked class ${eachClass.id} at timeslot ${eachClass.time}.`);  
+        alert(`You have booked ${eachClass.name} class of class id ${eachClass.id} at timeslot ${eachClass.time} at ${location}`);  
       })
       row.append(book)
       classList.querySelector("tbody").appendChild(row);
